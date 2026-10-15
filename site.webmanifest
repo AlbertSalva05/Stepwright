@@ -1,0 +1,44 @@
+{
+  "name": "Stepwright",
+  "short_name": "Stepwright",
+  "description": "AI prompts, anti-slop rules and a workflow composer for frontend work.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "lang": "en",
+  "dir": "ltr",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f6f4ef",
+  "theme_color": "#f6f4ef",
+  "categories": [
+    "developer",
+    "productivity",
+    "design"
+  ],
+  "icons": [
+    {
+      "src": "assets/logo/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/logo/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/logo/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "assets/logo/logo_mark_01.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

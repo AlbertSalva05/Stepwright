@@ -1,34 +1,65 @@
-# Stepwright · v2.5.0
+# Stepwright · v2.7.0
 
-AI prompts, anti-slop rules and a workflow composer for frontend work. Formerly Frontend UI Design Agents Collection.
+AI prompts, anti-slop rules and a workflow composer for frontend work. Static site, ready for Render.
 
-Static site, ready for Render.
+## Files
 
-## Contents
-
-- `index.html`: the whole site in one self-contained file (styles, scripts, 25 prompts in project order, the 8-phase workflow composer (framework list you can extend, file attachments for content and design direction), and 6 anti-slop files plus the combined summary inlined)
-- `assets/logo/`: 4 SVG logo files (tile mark and light, dark and one-colour lockups) plus 3 PNG icons (32 px favicon, 180 px Apple touch icon, 512 px social image)
-- `assets/icons/`: 7 category icons and 14 interface icons (SVG), linked for download
-- `render.yaml`: Render Blueprint with security and cache headers
-- `robots.txt`
+```
+├── index.html            the site (markup, styles, logic) with static SEO tags in <head>
+├── support.js            runtime (do not edit)
+├── prompts-data.js       25 prompts and 6 anti-slop files
+├── site.webmanifest      install name, colours, 192/512/maskable icons
+├── sitemap.xml
+├── robots.txt            allows all, points to sitemap.xml
+├── render.yaml           Render Blueprint: static hosting, security and cache headers
+├── README.md
+└── assets/
+    ├── og-image.png      1200×630 social sharing image
+    ├── logo/             mark, symbol and lockups (SVG), favicon-32, apple-touch-icon, icon-192, icon-512, icon-maskable-512
+    └── icons/            7 category + 14 interface icons (SVG)
+```
 
 ## Deploy on Render
 
-1. Push this folder to its own GitHub or GitLab repository (the files at the repository root).
-2. In Render, choose **New > Blueprint** and select the repository. Render reads `render.yaml`.
-3. Alternatively choose **New > Static Site**, leave the build command empty and set the publish directory to `.`.
+1. Push this folder to its own GitHub repository (files at the repository root).
+2. In Render choose **New > Blueprint** and pick the repository. Render reads `render.yaml`.
+3. Or choose **New > Static Site**, leave the build command empty and set the publish directory to `.`.
 
-The site uses hash routes (`#/prompts`, `#/workflow`, `#/antislop`, `#/design-system`, `#/faq`, `#/settings`, `#/privacy`, `#/terms`), so no rewrite rules are needed.
+Hash routes (`#/prompts`, `#/workflow`, `#/antislop`, `#/design-system`, `#/faq`, `#/settings`, `#/privacy`, `#/terms`) need no rewrite rules.
+
+## Before launch
+
+- The site URL is set to `https://stepwright.onrender.com`. If Render gives a different URL or you add a domain, replace it in `index.html` (canonical, og:url, og:image, twitter:image), `robots.txt` and `sitemap.xml`.
+- Run PageSpeed Insights on the live URL (https://pagespeed.web.dev).
 
 ## Updating content
 
-Prompt and anti-slop text is compiled into `index.html`. Edit the source `.md` files in the design project, rebuild, and replace `index.html`.
+Prompt and anti-slop text is compiled into `index.html`. Edit the source files in the design project, rebuild, and replace `index.html`.
 
 ## Fonts
 
 IBM Plex Sans and IBM Plex Mono, SIL Open Font License 1.1, loaded from Google Fonts.
 
 ## Changelog
+
+### v2.7.0
+
+- Breadcrumb bar under the header on every page except Home: Back button plus a Home › section › page trail. Replaces the separate breadcrumbs that sat on each page
+- New `sitemap.xml`; `robots.txt` points to it
+- Absolute `og:image`, `og:url`, `twitter:image` and a canonical link
+- Manifest: `id`, `scope`, `lang`, 192 px and maskable icons; theme colour matches the page
+- Deploy is no longer a single bundled file: `index.html` loads `support.js` and `prompts-data.js`, so crawlers see the title and meta tags without running JavaScript, and nothing has to be unpacked first (about 377 KB instead of 1 MB)
+- Text files normalized: LF line endings, no trailing spaces, final newline
+
+### v2.6.0
+
+- Icons: phase cards get their phase icon and a prompt-count badge; hero and Workflow intro get icon badges; arrow icons on primary links
+- Less dense copy: hero, section intros and Workflow steps cut to two lines or less; a "New" eyebrow in the hero
+- Loading: thin progress bar and a short fade on page change; search shows a spinner and dims results while you type; skeletons pulse while prompts load. All motion is off with reduced motion
+- Responsive: hero file tree truncates comments instead of scrolling sideways; info button no longer pokes outside the Workflow sidebar
+- New 1200×630 social image (eight-step staircase), web manifest, `lang="en"` on the page
+- Removed: unused `favicon-32.png` (the favicon is inlined in `index.html`)
+
 
 ### v2.5.0
 
