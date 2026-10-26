@@ -1,4 +1,4 @@
-# Stepwright · v2.8.0
+# Stepwright · v2.8.1
 
 AI prompts, anti-slop rules and a workflow composer for frontend work. Static site, ready for Render.
 
@@ -42,6 +42,12 @@ Prompt and anti-slop text is compiled into `index.html`. Edit the source files i
 IBM Plex Sans and IBM Plex Mono, SIL Open Font License 1.1, loaded from Google Fonts.
 
 ## Changelog
+
+### v2.8.1
+
+- Workflow side panel: stays fixed below the header on every screen 1024 px and wider; on short screens the anti-slop options fold into one row with a Change link; if it still does not fit it scrolls with the page instead of hiding under the header
+- Build stamp in the footer and a `stepwright-build` meta tag to confirm which build is live
+- `fx.js` is requested with a version query and served with no-cache
 
 ### v2.8.0
 
