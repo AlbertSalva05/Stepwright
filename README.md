@@ -1,4 +1,4 @@
-# Stepwright · v2.7.0
+# Stepwright · v2.8.0
 
 AI prompts, anti-slop rules and a workflow composer for frontend work. Static site, ready for Render.
 
@@ -7,6 +7,7 @@ AI prompts, anti-slop rules and a workflow composer for frontend work. Static si
 ```
 ├── index.html            the site (markup, styles, logic) with static SEO tags in <head>
 ├── support.js            runtime (do not edit)
+├── fx.js                 motion layer: hero constellation, text reveals, stat counters, card hover
 ├── prompts-data.js       25 prompts and 6 anti-slop files
 ├── site.webmanifest      install name, colours, 192/512/maskable icons
 ├── sitemap.xml
@@ -41,6 +42,18 @@ Prompt and anti-slop text is compiled into `index.html`. Edit the source files i
 IBM Plex Sans and IBM Plex Mono, SIL Open Font License 1.1, loaded from Google Fonts.
 
 ## Changelog
+
+### v2.8.0
+
+- Hero: constellation background on canvas (follows the pointer, pauses off-screen, still frame with reduced motion), headline and lead text reveals, buttons shortened to "Browse prompts" and "Build a workflow" on one line
+- Hero stats: 25 prompts, 8 build phases, 6 rule files, each a link, counting up with an outline-to-fill effect. Replaces the four pills
+- 3D window effect works at every screen width; the featured prompt window tilts the opposite way
+- Folder cards replace the accordion: direction-aware hover preview (keyboard and touch too), path-style "› folder/ N →" link at the bottom
+- Workflow teaser: two columns with a sticky intro, phase rows with prompt tags inline, "Phase N of 8" plus an eight-bar marker
+- Skeletons use one shimmer strip and real content fades in
+- Workflow side panel fits on screen without inner scrolling; copy and download sit side by side when they fit
+- Back-to-top: floating and docked buttons line up at every width
+- Icons: one 1.75 stroke for icons 18 px and up
 
 ### v2.7.0
 
