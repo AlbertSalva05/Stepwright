@@ -30,6 +30,9 @@ services:
       - path: /prompts-data.js
         name: Cache-Control
         value: no-cache
+      - path: /fx.js
+        name: Cache-Control
+        value: no-cache
       - path: /support.js
         name: Cache-Control
         value: public, max-age=86400
