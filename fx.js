@@ -116,11 +116,14 @@
   let t=0;
   function scan(){clearTimeout(t);t=setTimeout(()=>{
     document.querySelectorAll('[data-fill-num]').forEach(fillNum);
-    document.querySelectorAll('[data-dir-hover]').forEach(dirHover);
+    document.querySelectorAll('[data-dir-hover]').forEach(dirHover);hdrVar();
     document.querySelectorAll('canvas[data-constellation]').forEach(constellation);
     document.querySelectorAll(HEAD).forEach(el=>prep(el,'words'));
     document.querySelectorAll(PARA).forEach(el=>prep(el,'lines'));
   },60)}
-  function boot(){scan();new MutationObserver(scan).observe(document.body,{childList:true,subtree:true,characterData:true})}
+  function hdrVar(){const hd=document.querySelector('.site-header');if(!hd||hd._swH)return;hd._swH=1;
+    const set=()=>document.documentElement.style.setProperty('--hdr-h',Math.ceil(hd.getBoundingClientRect().height)+'px');
+    new ResizeObserver(set).observe(hd);set()}
+  function boot(){scan();hdrVar();new MutationObserver(scan).observe(document.body,{childList:true,subtree:true,characterData:true})}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
 })();
