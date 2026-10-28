@@ -45,6 +45,9 @@ IBM Plex Sans and IBM Plex Mono, SIL Open Font License 1.1, loaded from Google F
 
 ### v2.8.1
 
+- Social image: new 1200×630 card showing a real prompt file with fill-in brackets (`?v=3` on the URL so platforms refetch)
+- Meta: matching title and description across search, Open Graph and X; added `og:locale`, `og:image:type`, `twitter:title`, `twitter:description`, `twitter:image:alt`, `application-name` and WebApplication structured data
+- Sitemap `lastmod` set to 2026-10-28
 - Workflow side panel: stays fixed below the header on every screen 1024 px and wider; on short screens the anti-slop options fold into one row with a Change link; if it still does not fit it scrolls with the page instead of hiding under the header
 - Build stamp in the footer and a `stepwright-build` meta tag to confirm which build is live
 - `fx.js` is requested with a version query and served with no-cache
