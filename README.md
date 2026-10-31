@@ -16,7 +16,7 @@ AI prompts, anti-slop rules and a workflow composer for frontend work. Static si
 ├── README.md
 └── assets/
     ├── og-image.png      1200×630 social sharing image
-    ├── logo/             mark, symbol and lockups (SVG), favicon-32, apple-touch-icon, icon-192, icon-512, icon-maskable-512
+    ├── logo/             mark and lockups (SVG), favicon-32, apple-touch-icon, icon-192, icon-512, icon-maskable-512
     └── icons/            7 category + 14 interface icons (SVG)
 ```
 
@@ -30,12 +30,12 @@ Hash routes (`#/prompts`, `#/workflow`, `#/antislop`, `#/design-system`, `#/faq`
 
 ## Before launch
 
-- The site URL is set to `https://stepwright.onrender.com`. If Render gives a different URL or you add a domain, replace it in `index.html` (canonical, og:url, og:image, twitter:image), `robots.txt` and `sitemap.xml`.
+- The site URL is set to `https://stepwright.onrender.com`. If Render gives a different URL or you add a domain, replace it in `index.html` (canonical, og:url, og:image, twitter:image, JSON-LD), `robots.txt` and `sitemap.xml`.
 - Run PageSpeed Insights on the live URL (https://pagespeed.web.dev).
 
 ## Updating content
 
-Prompt and anti-slop text is compiled into `index.html`. Edit the source files in the design project, rebuild, and replace `index.html`.
+Prompt and anti-slop text lives in `prompts-data.js`. Edit the source files in the design project, rebuild, and replace `prompts-data.js` and `index.html`.
 
 ## Fonts
 
@@ -45,6 +45,8 @@ IBM Plex Sans and IBM Plex Mono, SIL Open Font License 1.1, loaded from Google F
 
 ### v2.8.1
 
+- Full delivery 2026-11-01: removed unused `assets/logo/logo_symbol_04.svg`; sitemap `lastmod` 2026-11-01
+- Build 2026-11-01.1: head tags no longer duplicated at runtime (title, description, canonical, Open Graph, X, JSON-LD now appear once); `aria-controls` set only while its panel is open; `<meta charset>` first in the head; Workflow preview gets `role="region"`. W3C HTML 0 errors / 0 warnings on all 11 routes, CSS 0 errors
 - Social image: new 1200×630 card showing a real prompt file with fill-in brackets (`?v=3` on the URL so platforms refetch)
 - Meta: matching title and description across search, Open Graph and X; added `og:locale`, `og:image:type`, `twitter:title`, `twitter:description`, `twitter:image:alt`, `application-name` and WebApplication structured data
 - Sitemap `lastmod` set to 2026-10-28
